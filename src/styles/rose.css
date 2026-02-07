@@ -1,0 +1,321 @@
+/* ================= RESET ================= */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+/* ================= MAIN CONTAINER ================= */
+.rose-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+
+  /* Background pulse */
+  background: linear-gradient(
+    270deg,
+    #0b0b0b,
+    #1c1c1c,
+    #2a0f1f
+  );
+  background-size: 600% 600%;
+  animation: bgPulse 15s ease infinite;
+}
+
+/* ================= CENTER STACK ================= */
+.intro,
+.reveal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  z-index: 3;
+}
+
+/* ================= TITLE ================= */
+.rose-title {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin: 0;
+  text-shadow: 0 0 15px rgba(255, 77, 109, 0.7);
+}
+
+/* ================= BUTTON ================= */
+.rose-btn {
+  padding: 14px 34px;
+  border: none;
+  border-radius: 40px;
+  background: white;
+  color: #ff4d6d;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.rose-btn:hover {
+  box-shadow: 0 0 25px rgba(255, 77, 109, 0.6);
+  transform: scale(1.05);
+}
+
+/* ================= BIG ROSE ================= */
+.big-rose {
+  position: relative;
+  font-size: 180px;
+  line-height: 1;
+  z-index: 4;
+  animation: heartbeat 2.5s infinite;
+}
+
+/* Glow aura */
+.big-rose::after {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 77, 109, 0.4),
+    transparent 70%
+  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  filter: blur(25px);
+}
+
+/* ================= FINAL MESSAGE ================= */
+.final-message {
+  font-size: 1.4rem;
+  color: #ffd1dc;
+  max-width: 600px;
+  text-align: center;
+}
+
+/* ================= FLOATING HEARTS ================= */
+.heart {
+  position: absolute;
+  bottom: -60px;
+  font-size: 24px;
+  animation: float 10s infinite ease-in-out;
+  opacity: 0.3;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.heart:nth-child(1) {
+  left: 25%;
+  animation-delay: 0s;
+}
+
+.heart:nth-child(2) {
+  left: 50%;
+  animation-delay: 4s;
+}
+
+.heart:nth-child(3) {
+  left: 75%;
+  animation-delay: 8s;
+}
+
+/* ================= ANIMATIONS ================= */
+
+/* Floating hearts */
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(0.9);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.1);
+    opacity: 0;
+  }
+}
+
+/* Background pulse */
+@keyframes bgPulse {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Rose heartbeat */
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.08);
+  }
+  40% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .rose-title {
+    font-size: 2.3rem;
+  }
+
+  .big-rose {
+    font-size: 120px;
+  }
+
+  .final-message {
+    font-size: 1.1rem;
+    max-width: 90%;
+  }
+}
+
+
+/* ================= HEART BURST (PREMIUM) ================= */
+
+.heart-burst {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+  z-index: 6;
+}
+
+/* ================= RADIAL HEART BURST ================= */
+
+.heart-burst {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* ================= CINEMATIC HEART BURST ================= */
+
+.heart-burst {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.burst-heart {
+  position: absolute;
+  font-size: 26px;
+  opacity: 1;
+  transform: rotate(var(--angle));
+  animation: cinematicBurst 2.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Slow cinematic motion */
+@keyframes cinematicBurst {
+  0% {
+    transform: rotate(var(--angle)) translateX(0) scale(0.5);
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(var(--angle)) translateX(240px) scale(1.15);
+    opacity: 0;
+  }
+}
+
+
+
+
+
+
+
+/* ================= GAME ================= */
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+  z-index: 5;
+}
+
+.game-container h1 {
+  font-size: 2.5rem;
+}
+
+.game-container p {
+  font-size: 1.4rem;
+  color: #ffd1dc;
+  max-width: 500px;
+}
+
+.game-buttons {
+  display: flex;
+  gap: 40px;
+}
+
+/* YES button */
+.yes-btn {
+  padding: 16px 36px;
+  font-size: 1.2rem;
+  border-radius: 40px;
+  border: none;
+  background: #ff4d6d;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* NO button */
+.no-btn {
+  padding: 14px 28px;
+  font-size: 1rem;
+  border-radius: 40px;
+  border: none;
+  background: #555;
+  color: white;
+  cursor: pointer;
+}
+.sure-text {
+  font-size: 1.2rem;
+  color: #ffd1dc;
+  margin-top: -10px;
+}
+
