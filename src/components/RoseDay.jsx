@@ -59,15 +59,27 @@ function RoseDay() {
               >
                 🌹
               </motion.div>
+<motion.p
+  className="final-message"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 0.9, duration: 1 }}
+>
+  My love,
+  <br /><br />
+  On this Rose Day, I want to give you more than just a rose—I want to give you my words, because they come straight from my heart.
+  <br /><br />
+  Just like a rose, you bring color to my life, fragrance to my days, and warmth to my soul. Every time I think of you, my heart smiles a little more. Your presence makes ordinary moments feel special, and your love makes me feel like the luckiest person alive.
+  <br /><br />
+  This rose is a small symbol of what you mean to me—beautiful, precious, and impossible to replace. I promise to cherish you, care for you, and stand by you, not just today, but every day we share together.
+  <br /><br />
+  Thank you for being you, for loving me the way you do, and for making my world brighter just by being in it.
+  <br /><br />
+  <strong>Happy Rose Day, my beautiful rose. 🌹</strong>
+  <br />
+  Forever yours,
+</motion.p>
 
-              <motion.p
-                className="final-message"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.9, duration: 1 }}
-              >
-                Like this rose, my love for you blooms more every day 💖
-              </motion.p>
 
               <motion.button
                 className="rose-btn"
