@@ -375,3 +375,63 @@ body {
     font-size: 1.2rem;
   }
 }
+
+
+
+
+
+/* ================= HOME PAGE ================= */
+
+/* ================= HOME CENTER FIX ================= */
+
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* Buttons container */
+.home-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+/* Day buttons */
+.day-btn {
+  width: 260px;
+  padding: 16px 0;
+  font-size: 1.2rem;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+
+  background: #ff4d6d;
+  color: white;
+  box-shadow: 0 0 20px rgba(255, 77, 109, 0.6);
+}
+
+
+/* Propose letter container */
+.love-letter {
+  max-width: 820px;
+  margin: auto;
+  text-align: center;
+}
+
+/* "Sure?" text */
+.sure-text {
+  margin-top: 10px;
+  color: #ff9bb3;
+  font-size: 1.1rem;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
